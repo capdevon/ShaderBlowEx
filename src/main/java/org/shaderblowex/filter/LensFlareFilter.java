@@ -2,6 +2,7 @@ package org.shaderblowex.filter;
 
 import com.jme3.asset.AssetManager;
 import com.jme3.material.Material;
+import com.jme3.math.FastMath;
 import com.jme3.post.Filter;
 import com.jme3.renderer.RenderManager;
 import com.jme3.renderer.ViewPort;
@@ -102,13 +103,7 @@ public class LensFlareFilter extends Filter {
      * @param ghostSpacing Values 0.0f to 0.5f. Default is 0.18f
      */
     public void setGhostSpacing(float ghostSpacing) {
-        if (ghostSpacing > 0.5f) {
-            ghostSpacing = 0.5f;
-        } else if (ghostSpacing < 0.0f) {
-            ghostSpacing = 0.0f;
-        }
-        this.ghostSpacing = ghostSpacing;
-
+        this.ghostSpacing = FastMath.clamp(ghostSpacing, 0.0f, 0.5f);
         if (material != null) {
             material.setFloat("Ghost", ghostSpacing);
         }
@@ -129,13 +124,7 @@ public class LensFlareFilter extends Filter {
      * @param haloDistance Default is 0.45f
      */
     public void setHaloDistance(float haloDistance) {
-        if (haloDistance > 0.5f) {
-            haloDistance = 0.5f;
-        } else if (haloDistance < 0.0f) {
-            haloDistance = 0.0f;
-        }
-        this.haloDistance = haloDistance;
-
+        this.haloDistance = FastMath.clamp(haloDistance, 0.0f, 0.5f);
         if (material != null) {
             material.setFloat("Halo", haloDistance);
         }
@@ -158,12 +147,7 @@ public class LensFlareFilter extends Filter {
      * @param threshold Default is 0.9f
      */
     public void setLightMapThreshold(float threshold) {
-        if (threshold > 0.5f) {
-            threshold = 0.5f;
-        } else if (threshold < 0.0f) {
-            threshold = 0.0f;
-        }
-        this.threshold = threshold;
+        this.threshold = FastMath.clamp(threshold, 0.0f, 0.5f);
         if (matLightMap != null) {
             matLightMap.setFloat("Threshold", threshold);
         }
