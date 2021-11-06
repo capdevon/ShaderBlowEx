@@ -21,5 +21,6 @@ dependencies {
     // Engine:
     implementation 'org.jmonkeyengine:jme3-core:' + jmeVersion
     implementation 'org.jmonkeyengine:jme3-desktop:' + jmeVersion
+    implementation 'org.jmonkeyengine:jme3-effects:' + jmeVersion
     implementation 'org.jmonkeyengine:jme3-lwjgl3:' + jmeVersion // LWJGL 3.x
 }
