@@ -67,8 +67,7 @@ public class BetterVignetteFilter extends Filter {
 
     public void setVignetteStrength(float vignetteStrength) {
         //checkFloatArgument(vignetteStrength, 0, 1.0f, "VignetteStrength");
-        vignetteStrength = FastMath.clamp(vignetteStrength, 0, 1.0f);
-        this.vignetteStrength = vignetteStrength;
+        this.vignetteStrength = FastMath.clamp(vignetteStrength, 0, 1.0f);
         if (material != null) {
             material.setFloat("VignetteStrength", vignetteStrength);
         }
@@ -80,8 +79,7 @@ public class BetterVignetteFilter extends Filter {
 
     public void setVignetteExtent(float vignetteExtent) {
         //checkFloatArgument(vignetteExtent, 0, 100.0f, "VignetteExtent");
-        vignetteExtent = FastMath.clamp(vignetteExtent, 0, 100.0f);
-        this.vignetteExtent = vignetteExtent;
+        this.vignetteExtent = FastMath.clamp(vignetteExtent, 0, 100.0f);
         if (material != null) {
             material.setFloat("VignetteExtent", vignetteExtent);
         }
@@ -93,8 +91,7 @@ public class BetterVignetteFilter extends Filter {
 
     public void setBlurSize(float blurSize) {
         //checkFloatArgument(blurSize, 0, 1.0f, "BlurSize");
-        blurSize = FastMath.clamp(blurSize, 0, 1.0f);
-        this.blurSize = blurSize;
+        this.blurSize = FastMath.clamp(blurSize, 0, 1.0f);
         if (material != null) {
             material.setFloat("BlurSize", blurSize);
         }
@@ -106,8 +103,7 @@ public class BetterVignetteFilter extends Filter {
 
     public void setBlurQuality(float blurQuality) {
         //checkFloatArgument(blurQuality, 0, 50.0f, "BlurQuality");
-        blurQuality = FastMath.clamp(blurQuality, 0, 50.0f);
-        this.blurQuality = blurQuality;
+        this.blurQuality = FastMath.clamp(blurQuality, 0, 50.0f);
         if (material != null) {
             material.setFloat("BlurQuality", blurQuality);
         }
@@ -119,8 +115,7 @@ public class BetterVignetteFilter extends Filter {
 
     public void setGrayPower(float grayPower) {
         //checkFloatArgument(grayPower, 0, 5.0f, "GrayPower");
-        grayPower = FastMath.clamp(grayPower, 0, 5.0f);
-        this.grayPower = grayPower;
+        this.grayPower = FastMath.clamp(grayPower, 0, 5.0f);
         if (material != null) {
             material.setFloat("GrayPower", grayPower);
         }
@@ -132,8 +127,7 @@ public class BetterVignetteFilter extends Filter {
 
     public void setGrayMargin(float grayMargin) {
         //checkFloatArgument(grayMargin, 0, 10.0f, "GrayMargin");
-        grayMargin = FastMath.clamp(grayMargin, 0, 10f);
-        this.grayMargin = grayMargin;
+        this.grayMargin = FastMath.clamp(grayMargin, 0, 10f);
         if (material != null) {
             material.setFloat("GrayMargin", grayMargin);
         }
