@@ -62,8 +62,10 @@ public class TVFilter extends Filter {
     }
 
     public void setVhs(boolean vhs) {
-        material.setBoolean("EnabledVHS", vhs);
         this.vhs = vhs;
+        if (material != null) {
+            material.setBoolean("EnabledVHS", vhs);
+        }
     }
 
     public boolean isLine() {
@@ -71,8 +73,10 @@ public class TVFilter extends Filter {
     }
 
     public void setLine(boolean line) {
-        material.setBoolean("EnabledLine", line);
         this.line = line;
+        if (material != null) {
+            material.setBoolean("EnabledLine", line);
+        }
     }
 
     public boolean isGrain() {
@@ -80,8 +84,10 @@ public class TVFilter extends Filter {
     }
 
     public void setGrain(boolean grain) {
-        material.setBoolean("EnabledGrain", grain);
         this.grain = grain;
+        if (material != null) {
+            material.setBoolean("EnabledGrain", grain);
+        }
     }
 
     public boolean isScanline() {
@@ -89,8 +95,10 @@ public class TVFilter extends Filter {
     }
 
     public void setScanline(boolean scanline) {
-        material.setBoolean("EnabledScanline", scanline);
         this.scanline = scanline;
+        if (material != null) {
+            material.setBoolean("EnabledScanline", scanline);
+        }
     }
 
     public boolean isVignette() {
@@ -98,8 +106,10 @@ public class TVFilter extends Filter {
     }
 
     public void setVignette(boolean vignette) {
-        material.setBoolean("EnabledVignette", vignette);
         this.vignette = vignette;
+        if (material != null) {
+            material.setBoolean("EnabledVignette", vignette);
+        }
     }
 
     @Override
