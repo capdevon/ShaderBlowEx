@@ -9,7 +9,7 @@ https://jmonkeystore.com/471f0c67-7911-48c4-84e8-d1f523555400
 # 1. BetterToneMap
 
 ## Usage: 
-```
+```java
 //Init
 int currentType=BetterToneMapFilter.BetterToneMapFilter.TYPE_LINEAR;
 float currentExposure=1.0;
@@ -45,7 +45,7 @@ https://github.com/cansik/processing-postfx
 # 2. BetterColorCorrection
 
 ## Usage: 
-```
+```java
 //Init
 float currentContrast=1.0f;
 float currentBrightness=0.0f;
@@ -94,7 +94,7 @@ https://hub.jmonkeyengine.org/t/i-made-a-post-filter-color-grading/31626
 # 3. BetterDepthOfField
 
 ## Usage: 
-```
+```java
 //Init
 float currentFocalDepth=0.5f;
 float currentFocalLength=75f;
@@ -130,7 +130,7 @@ http://devlog-martinsh.blogspot.com/2011/12/glsl-depth-of-field-with-bokeh-v24.h
 # 4. BetterGroundFogFilter
 
 ## Usage: 
-```
+```java
 //Init
 float currentSunShininess = 8.0f;
 float currentFogDensity = 0.08f;
@@ -177,7 +177,7 @@ https://hub.jmonkeyengine.org/t/bettergroundfogfilter/41452
 # 5. BleachFilter
 
 ## Usage: 
-```
+```java
 //Init
 float currentStrength=1.0f;
 //
@@ -202,7 +202,7 @@ http://en.wikipedia.org/wiki/Bleach_bypass
 # 6. BokehDoFFilter
 
 ## Usage: 
-```
+```java
 //Init
 float currentFocusPoint=8.0f;
 float currentRadiusScale=0.5f;
@@ -240,7 +240,7 @@ https://github.com/TheRealMJP/BakingLab/blob/master/BakingLab/PostProcessing.hls
 # 7. RadialHaloGlow
 
 ## Usage: 
-```
+```java
 //Init
 float currentStrength=30.0f;
 float currentBrightness=0.5f;
@@ -266,7 +266,7 @@ https://www.geeks3d.com/20140204/glsl-volumetric-light-post-processing-filter-fo
 # 8. BetterVignette
 
 ## Usage: 
-```
+```java
 //Init
 float currentStrength=0.5f;
 float currentExtent=50.0f;
@@ -302,7 +302,7 @@ https://en.wikipedia.org/wiki/Vignetting
 # 9. PixelArt
 
 ## Usage: 
-```
+```java
 //Init
 float currentEdgeWidth=1.0f;
 float currentColorSize=4f;
@@ -345,7 +345,7 @@ http://unusedino.de/ec64/technical/misc/vic656x/colors/
 # 10. Posterization
 
 ## Usage: 
-```
+```java
 //Init
 float currentStep=10.0f;
 //
@@ -378,7 +378,7 @@ https://www.geeks3d.com/20091027/shader-library-posterization-post-processing-ef
 # 11. SimpleBloom
 
 ## Usage: 
-```
+```java
 //Init
 float currentStrength=0.5f;
 float currentSize=3.0f;
@@ -410,7 +410,7 @@ https://github.com/kiwipxl/GLSL-shaders
 # 12. WhiteBloom
 
 ## Usage: 
-```
+```java
 //Init
 float currentStrength=1.0f;
 float currentScale=256f;
@@ -433,7 +433,7 @@ whiteBloomFilter.setScale(currentScale);
 # 13. DLAA
 
 ## Usage: 
-```
+```java
 //Init
 DLAAFilter dLAAFilter=new DLAAFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
@@ -458,7 +458,7 @@ https://en.wikipedia.org/wiki/Spatial_anti-aliasing
 # 14. NFAA
 
 ## Usage: 
-```
+```java
 //Init
 NFAAFilter nFAAFilter=new NFAAFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
@@ -487,7 +487,7 @@ https://en.wikipedia.org/wiki/Spatial_anti-aliasing
 # 15. Air
 
 ## Usage: 
-```
+```java
 //Init
 float currentAirDensity = 0.4f;
 float currentAirDistance = 10;
@@ -511,7 +511,7 @@ airFilter.setAirDesaturation(currentAirDesaturation);
 # 16. TV
 
 ## Usage: 
-```
+```java
 //Init
 boolean currentVhs=true;
 boolean currentLine=true;
@@ -538,7 +538,7 @@ tVFilter.setGrain(currentGrain);
 # 17. MipmapBloom
 
 ## Usage: 
-```
+```java
 //Init
 float currentExposurePower=5.0f;
 float currentExposureCutOff=0.0f;
@@ -569,7 +569,7 @@ https://hub.jmonkeyengine.org/t/mipmapbloomfilter-on-github/36360
 # 18. SimpleSSR
 
 ## Usage: 
-```
+```java
 //Init
 float currentDownSample=2f;
 float currentStepLength=0.5f;
@@ -616,7 +616,7 @@ https://github.com/jMonkeyEngine/jmonkeyengine/pull/1144
 # 19. OilPaint
 
 ## Usage: 
-```
+```java
 //Init
 int currentStrength=5;
 //
@@ -639,7 +639,7 @@ https://www.reddit.com/r/shaders/comments/5e7026/help_making_an_oil_paint_post_p
 # 20. LensFlare
 
 ## Usage: 
-```
+```java
 //Init 
 float currentSpacing=0.125f;
 float currentDistance=0.5f;
