@@ -1,22 +1,25 @@
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'java-library'
+}
 
-apply plugin: 'java'
+description = 'PostProcessing filters for jMonkeyEngine3'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = 1.11
+targetCompatibility = 1.11
 
-group 'org.shaderblowex'
-version '1.0'
-
-repositories {
-    jcenter()
+repositories 
+    mavenCentral()
+    //jcenter()
 }
 
 project.ext {
-    jmeVer = '3.2.4-stable'
+    jmeVersion = '3.4.0-stable'
 }
 
 dependencies {
-    implementation "org.jmonkeyengine:jme3-core:$jmeVer"
-    implementation "org.jmonkeyengine:jme3-desktop:$jmeVer"
-    implementation "org.jmonkeyengine:jme3-lwjgl3:$jmeVer"
+    // Engine:
+    implementation 'org.jmonkeyengine:jme3-core:' + jmeVersion
+    implementation 'org.jmonkeyengine:jme3-desktop:' + jmeVersion
+    implementation 'org.jmonkeyengine:jme3-lwjgl3:' + jmeVersion // LWJGL 3.x
 }
