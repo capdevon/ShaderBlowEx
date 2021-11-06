@@ -144,7 +144,6 @@ public class BetterColorCorrectionFilter extends Filter {
      * @param contrast the contrast value.
      */
     public void setContrast(float contrast) {
-        material.setFloat("Contrast", contrast);
         if (material != null) {
             material.setFloat("Contrast", contrast);
         }
