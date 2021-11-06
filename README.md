@@ -6,9 +6,9 @@ https://jmonkeyengine.org
 https://jmonkeystore.com/471f0c67-7911-48c4-84e8-d1f523555400
 
  
-# 1. BetterToneMap
-
-## Usage: 
+## 1. BetterToneMap
+![BetterToneMapFilter](../master/img/BetterToneMapFilter.jpg)
+ 
 ```java
 //Init
 int currentType=BetterToneMapFilter.BetterToneMapFilter.TYPE_LINEAR;
@@ -26,25 +26,19 @@ betterToneMapFilter.setGamma(2.2f);
 ```
 
 #### Info:
-
 https://en.wikipedia.org/wiki/Tone_mapping
 
 #### Credits:
-
 https://github.com/tizian/tonemapper/
 
 https://github.com/GPUOpen-Effects/FidelityFX
 
 https://github.com/cansik/processing-postfx
 
-#### Test:
 
-![BetterToneMapFilter](../master/img/BetterToneMapFilter.jpg)
+## 2. BetterColorCorrection
+![BetterColorCorrectionFilter](../master/img/BetterColorCorrectionFilter.jpg)
 
-
-# 2. BetterColorCorrection
-
-## Usage: 
 ```java
 //Init
 float currentContrast=1.0f;
@@ -73,7 +67,6 @@ betterColorCorrectionFilter.setGreen(currentGreen);
 betterColorCorrectionFilter.setBlue(currentBlue);
 ```
 #### Info:
-
 https://en.wikipedia.org/wiki/Color_correction
 
 https://en.wikipedia.org/wiki/Color_grading
@@ -83,17 +76,12 @@ https://en.wikipedia.org/wiki/Color_balance
 https://learning.linkedin.com/blog/design-tips/color-grading-vs--color-correction--what-s-the-difference-
 
 #### Credits:
-
 https://hub.jmonkeyengine.org/t/i-made-a-post-filter-color-grading/31626
 
-#### Test:
 
-![BetterColorCorrectionFilter](../master/img/BetterColorCorrectionFilter.jpg)
+## 3. BetterDepthOfField
+![BetterDepthOfFieldFilter](../master/img/BetterDepthOfFieldFilter.jpg)
 
-
-# 3. BetterDepthOfField
-
-## Usage: 
 ```java
 //Init
 float currentFocalDepth=0.5f;
@@ -114,22 +102,17 @@ betterDepthOfFieldFilter.setAutoFocus(currentAutoFocus);
 betterDepthOfFieldFilter.setShowFocus(currentShowFocus);
 ```
 #### Info: 
-
 https://en.wikipedia.org/wiki/Depth_of_field
 
 #### Credits:
-
 https://hub.jmonkeyengine.org/t/new-depth-of-field-effect/31036
  
 http://devlog-martinsh.blogspot.com/2011/12/glsl-depth-of-field-with-bokeh-v24.html
 
-#### Test:
 
-![BetterDepthOfFieldFilter](../master/img/BetterDepthOfFieldFilter.jpg)
+## 4. BetterGroundFogFilter
+![BetterGroundFogFilter](../master/img/BetterGroundFogFilter.jpg)
 
-# 4. BetterGroundFogFilter
-
-## Usage: 
 ```java
 //Init
 float currentSunShininess = 8.0f;
@@ -166,17 +149,12 @@ betterGroundFogState.getFilter().getFogBoundary().setW(currentFogBoundaryW);
 ```
 
 #### Credits:
-
 https://hub.jmonkeyengine.org/t/bettergroundfogfilter/41452
 
-#### Test:
 
-![BetterGroundFogFilter](../master/img/BetterGroundFogFilter.jpg)
+## 5. BleachFilter
+![BleachFilter](../master/img/BleachFilter.jpg)
 
-
-# 5. BleachFilter
-
-## Usage: 
 ```java
 //Init
 float currentStrength=1.0f;
@@ -190,18 +168,12 @@ bleachMapFilter.setStrength(currentStrength);
 ```
 
 #### Info:
-
 http://en.wikipedia.org/wiki/Bleach_bypass
 
-#### Test:
 
-![BleachFilter](../master/img/BleachFilter.jpg)
+## 6. BokehDoFFilter
+![BokehDoFFilter](../master/img/BokehDoFFilter.jpg)
 
-
-
-# 6. BokehDoFFilter
-
-## Usage: 
 ```java
 //Init
 float currentFocusPoint=8.0f;
@@ -221,25 +193,19 @@ bokehDoFFilter.setFocusScale(currentFocusScale);
 ```
 
 ### Info: 
-
 https://en.wikipedia.org/wiki/Depth_of_field
 
 #### Credits:
-
 http://tuxedolabs.blogspot.com/2018/05/bokeh-depth-of-field-in-single-pass.html
 
 https://mynameismjp.wordpress.com/the-museum/samples-tutorials-tools/depth-of-field-sample/
 
 https://github.com/TheRealMJP/BakingLab/blob/master/BakingLab/PostProcessing.hlsl#L160
 
-#### Test:
 
-![BokehDoFFilter](../master/img/BokehDoFFilter.jpg)
+## 7. RadialHaloGlow
+![RadialHaloGlowFilter](../master/img/RadialHaloGlowFilter.jpg)
 
-
-# 7. RadialHaloGlow
-
-## Usage: 
 ```java
 //Init
 float currentStrength=30.0f;
@@ -255,17 +221,12 @@ radialHaloGlow.setBrightness(currentBrightness);
 ```
 
 #### Credits:
-
 https://www.geeks3d.com/20140204/glsl-volumetric-light-post-processing-filter-for-webcam-video/
 
-#### Test:
 
-![RadialHaloGlowFilter](../master/img/RadialHaloGlowFilter.jpg)
+## 8. BetterVignette
+![BetterVignetteFilter](../master/img/BetterVignetteFilter.jpg)
 
-
-# 8. BetterVignette
-
-## Usage: 
 ```java
 //Init
 float currentStrength=0.5f;
@@ -286,22 +247,15 @@ betterVignetteFilter.setBlurSize(currentBlurSize);
 betterVignetteFilter.setBlurQuality(currentBlurQuality);
 betterVignetteFilter.setGrayPower(grayPower);
 betterVignetteFilter.setGrayMargin(grayMargin);
-        
 ```
-#### Info:
 
+#### Info:
 https://en.wikipedia.org/wiki/Vignetting
 
 
-#### Test:
-
-![BetterVignetteFilter](../master/img/BetterVignetteFilter.jpg)
-
-
-
-# 9. PixelArt
-
-## Usage: 
+## 9. PixelArt
+![PixeArtFilter](../master/img/PixeArtFilter.jpg)
+ 
 ```java
 //Init
 float currentEdgeWidth=1.0f;
@@ -319,32 +273,23 @@ pixelArtFilter.setPaletteType(currentpPaletteType);
 pixelArtFilter.setEdgeWidth(currentEdgeWidth);
 pixelArtFilter.setColorSize(currentColorSize);
 pixelArtFilter.setColorCount(currentColorCount);
-pixelArtFilter.setPixelResolution(currentPixelResolution);
- 
-        
+pixelArtFilter.setPixelResolution(currentPixelResolution);        
 ```
-#### Info:
 
+#### Info:
 https://en.wikipedia.org/wiki/Pixel_art
 
 #### Credits:
-
 https://github.com/cansik/processing-postfx
 
 https://www.shadertoy.com/view/XsjSzR
 
 http://unusedino.de/ec64/technical/misc/vic656x/colors/
 
-#### Test:
 
-![PixeArtFilter](../master/img/PixeArtFilter.jpg)
+## 10. Posterization
+![PosterizationFilter](../master/img/PosterizationFilter.jpg)
 
-
-
-
-# 10. Posterization
-
-## Usage: 
 ```java
 //Init
 float currentStep=10.0f;
@@ -355,29 +300,20 @@ fpp.addFilter(posterizationFilter);
 viewPort.addProcessor(fpp);
 //Modify
 posterizationFilter.setStep(currentStep);
- 
-        
 ```
-#### Info:
 
+#### Info:
 https://en.wikipedia.org/wiki/Posterization
 
 #### Credits:
-
 https://rosenzweig.io/blog/monotone-portraits-with-glsl.html
 
 https://www.geeks3d.com/20091027/shader-library-posterization-post-processing-effect-glsl/
 
-#### Test:
 
-![PosterizationFilter](../master/img/PosterizationFilter.jpg)
+## 11. SimpleBloom
+![SimpleBloomFilter](../master/img/SimpleBloomFilter.jpg)
 
-
-
-
-# 11. SimpleBloom
-
-## Usage: 
 ```java
 //Init
 float currentStrength=0.5f;
@@ -395,21 +331,14 @@ simpleBloomFilter.setSamples(currentSamples);
 ```
 
 #### Credits:
-
 http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/
 
 https://github.com/kiwipxl/GLSL-shaders
 
-#### Test:
 
-![SimpleBloomFilter](../master/img/SimpleBloomFilter.jpg)
+## 12. WhiteBloom
+![WhiteBloomFilter](../master/img/WhiteBloomFilter.jpg)
 
-
-
-
-# 12. WhiteBloom
-
-## Usage: 
 ```java
 //Init
 float currentStrength=1.0f;
@@ -425,14 +354,9 @@ whiteBloomFilter.setScale(currentScale);
 ```
  
 
-#### Test:
+## 13. DLAA
+![DLAAFilter](../master/img/DLAAFilter.jpg)
 
-![WhiteBloomFilter](../master/img/WhiteBloomFilter.jpg)
- 
-
-# 13. DLAA
-
-## Usage: 
 ```java
 //Init
 DLAAFilter dLAAFilter=new DLAAFilter();
@@ -442,22 +366,17 @@ viewPort.addProcessor(fpp);
 ```
 
 #### Info:
-
 https://en.wikipedia.org/wiki/Spatial_anti-aliasing
 
 #### Credits:
-
- https://github.com/microsoft/Imagine_fudge-roll
+https://github.com/microsoft/Imagine_fudge-roll
  
- https://github.uconn.edu/eec09006/breakout
- 
-#### Test:
+https://github.uconn.edu/eec09006/breakout
 
-![DLAAFilter](../master/img/DLAAFilter.jpg)
 
-# 14. NFAA
+## 14. NFAA
+![NFAAFilter](../master/img/NFAAFilter.jpg)
 
-## Usage: 
 ```java
 //Init
 NFAAFilter nFAAFilter=new NFAAFilter();
@@ -467,26 +386,19 @@ viewPort.addProcessor(fpp);
 ```
 
 #### Info:
-
 https://en.wikipedia.org/wiki/Spatial_anti-aliasing
 
 #### Credits:
-
- https://github.com/manuelbua/libgdx-contribs
+https://github.com/manuelbua/libgdx-contribs
  
- http://blenderartists.org/forum/showthread.php?209574-Full-Screen-Anti-Aliasing-(NFAA-DLAA-SSAA)
+http://blenderartists.org/forum/showthread.php?209574-Full-Screen-Anti-Aliasing-(NFAA-DLAA-SSAA)
  
- http://www.gamedev.net/topic/580517-nfaa---a-post-process-anti-aliasing-filter-results-implementation-details/
- 
- 
-#### Test:
-
-![NFAAFilter](../master/img/NFAAFilter.jpg)
+http://www.gamedev.net/topic/580517-nfaa---a-post-process-anti-aliasing-filter-results-implementation-details/
 
 
-# 15. Air
+## 15. Air
+![AirFilter](../master/img/AirFilter.jpg)
 
-## Usage: 
 ```java
 //Init
 float currentAirDensity = 0.4f;
@@ -502,15 +414,11 @@ airFilter.setAirDensity(currentAirDensity);
 airFilter.setAirDistance(currentAirDistance);
 airFilter.setAirDesaturation(currentAirDesaturation);
 ```
-  
-#### Test:
-
-![AirFilter](../master/img/AirFilter.jpg)
 
 
-# 16. TV
+## 16. TV
+![TVFilter](../master/img/TVFilter.jpg)
 
-## Usage: 
 ```java
 //Init
 boolean currentVhs=true;
@@ -528,16 +436,11 @@ tVFilter.setVhs(currentVhs);
 tVFilter.setLine(currentLine);
 tVFilter.setGrain(currentGrain);
 ```
-  
-#### Test:
-
-![TVFilter](../master/img/TVFilter.jpg)
 
 
+## 17. MipmapBloom
+![MipmapBloomFilter](../master/img/MipmapBloomFilter.jpg)
 
-# 17. MipmapBloom
-
-## Usage: 
 ```java
 //Init
 float currentExposurePower=5.0f;
@@ -556,19 +459,14 @@ mipmapBloomFilter.setExposureCutOff(currentExposureCutOff);
 mipmapBloomFilter.setBloomIntensity(currentBloomFactor,currentBloomPower );
 mipmapBloomFilter.setDownSamplingCoef(currentDownSamplingCoef);
 ```
+
 #### Credits:
-
 https://hub.jmonkeyengine.org/t/mipmapbloomfilter-on-github/36360
-  
-#### Test:
-
-![MipmapBloomFilter](../master/img/MipmapBloomFilter.jpg)
 
 
+## 18. SimpleSSR
+![SimpleSSRFilter](../master/img/SimpleSSRFilter.jpg)
 
-# 18. SimpleSSR
-
-## Usage: 
 ```java
 //Init
 float currentDownSample=2f;
@@ -592,30 +490,22 @@ fpp.addFilter(simpleSSRFilter);
 viewPort.addProcessor(fpp);
 //Modify
 simpleSSRFilter.setStepLength(currentStepLength);
-
 ```
 
 #### Info
-
 https://jove.fandom.com/wiki/Screen_Space_Reflection_(SSR)
 
 #### Credits:
-
 https://github.com/riccardobl/SimpleSSRShader
 
 https://hub.jmonkeyengine.org/t/shader-screen-space-reflections-for-jme/41366/3
 
 https://github.com/jMonkeyEngine/jmonkeyengine/pull/1144
-  
-#### Test:
-
-![SimpleSSRFilter](../master/img/SimpleSSRFilter.jpg)
 
 
+## 19. OilPaint
+![OilPaintFilter](../master/img/OilPaintFilter.jpg)
 
-# 19. OilPaint
-
-## Usage: 
 ```java
 //Init
 int currentStrength=5;
@@ -627,18 +517,14 @@ viewPort.addProcessor(fpp);
 //Modify
 oilPaintFilter.setStrength(currentStrength);
 ```
+
 #### Credits:
-
 https://www.reddit.com/r/shaders/comments/5e7026/help_making_an_oil_paint_post_processing_shader/
-  
-#### Test:
-
-![OilPaintFilter](../master/img/OilPaintFilter.jpg)
 
 
-# 20. LensFlare
+## 20. LensFlare
+![LensFlareFilter](../master/img/LensFlareFilter.jpg)
 
-## Usage: 
 ```java
 //Init 
 float currentSpacing=0.125f;
@@ -657,12 +543,6 @@ lensFlareFilter.setGhostSpacing(currentSpacing);
 lensFlareFilter.setHaloDistance(currentDistance);
 lensFlareFilter.setLightMapThreshold(currentThreshold);
 ```
+
 #### Credits:
-
 https://hub.jmonkeyengine.org/t/lens-flare-code-small-update-screens/23796
-  
-#### Test:
-
-![LensFlareFilter](../master/img/LensFlareFilter.jpg)
-
-
