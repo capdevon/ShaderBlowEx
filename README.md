@@ -11,18 +11,19 @@ https://jmonkeystore.com/471f0c67-7911-48c4-84e8-d1f523555400
  
 ```java
 //Init
-int currentType=BetterToneMapFilter.BetterToneMapFilter.TYPE_LINEAR;
-float currentExposure=1.0;
-float currentGamma=1.0;
-//
-BetterToneMapFilter betterToneMapFilter=new BetterToneMapFilter(currentType,currentExposure,currentGamma);
+int currentType = BetterToneMapFilter.TYPE_LINEAR;
+float currentExposure = 1.0;
+float currentGamma = 1.0;
+
+BetterToneMapFilter bToneMapFilter = new BetterToneMapFilter(currentType, currentExposure, currentGamma);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
-fpp.addFilter(betterToneMapFilter);
+fpp.addFilter(bToneMapFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
-betterToneMapFilter.setType(BetterToneMapFilter.TYPE_WHITE_PRESERVING_REINHARD);
-betterToneMapFilter.setExposure(1.1f);
-betterToneMapFilter.setGamma(2.2f);
+bToneMapFilter.setType(BetterToneMapFilter.TYPE_WHITE_PRESERVING_REINHARD);
+bToneMapFilter.setExposure(1.1f);
+bToneMapFilter.setGamma(2.2f);
 ```
 
 #### Info:
