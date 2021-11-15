@@ -86,22 +86,23 @@ https://hub.jmonkeyengine.org/t/i-made-a-post-filter-color-grading/31626
 
 ```java
 //Init
-float currentFocalDepth=0.5f;
-float currentFocalLength=75f;
-float currentFStop=16.0f;
-boolean currentAutoFocus=true;
-boolean currentShowFocus=false;
-//
-betterDepthOfFieldFilter=new BetterDepthOfFieldFilter( );
+float focalDepth = 0.5f;
+float focalLength = 75f;
+float fStop = 16.0f;
+boolean autoFocus = true;
+boolean showFocus = false;
+
+BetterDepthOfFieldFilter bDofFilter = new BetterDepthOfFieldFilter(focalDepth, focalLength, fStop, autoFocus, showFocus);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
-fpp.addFilter(betterDepthOfFieldFilter);
+fpp.addFilter(bDofFilter);
 viewPort.addProcessor(fpp);
-//
-betterDepthOfFieldFilter.setFocalDepth(currentFocalDepth);
-betterDepthOfFieldFilter.setFocalLength(currentFocalLength);
-betterDepthOfFieldFilter.setfStop(currentFStop);
-betterDepthOfFieldFilter.setAutoFocus(currentAutoFocus);
-betterDepthOfFieldFilter.setShowFocus(currentShowFocus);
+
+//Modify
+bDofFilter.setFocalDepth(focalDepth);
+bDofFilter.setFocalLength(focalLength);
+bDofFilter.setfStop(fStop);
+bDofFilter.setAutoFocus(autoFocus);
+bDofFilter.setShowFocus(showFocus);
 ```
 #### Info: 
 https://en.wikipedia.org/wiki/Depth_of_field
