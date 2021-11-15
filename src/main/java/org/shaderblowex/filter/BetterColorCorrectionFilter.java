@@ -6,6 +6,7 @@ import com.jme3.export.JmeExporter;
 import com.jme3.export.JmeImporter;
 import com.jme3.export.OutputCapsule;
 import com.jme3.material.Material;
+import com.jme3.math.FastMath;
 import com.jme3.post.Filter;
 import com.jme3.renderer.RenderManager;
 import com.jme3.renderer.ViewPort;
@@ -13,24 +14,24 @@ import java.io.IOException;
 
 public class BetterColorCorrectionFilter extends Filter {
 
-    private final float DEFAULT_BRIGHTNESS = 0.0f;
-    private final float DEFAULT_CONTRAST = 1.0f;
-    private final float DEFAULT_HUE = 0.0f;
-    private final float DEFAULT_SATURATION = .0f;
-    private final float DEFAULT_INVERT = 0.0f;
-    private final float DEFAULT_RED = 1.0f;
-    private final float DEFAULT_GREEN = 1.0f;
-    private final float DEFAULT_BLUE = 1.0f;
-    private final float DEFAULT_GAMMA = 1.0f;
+    private static final float DEFAULT_BRIGHTNESS = 0.0f;
+    private static final float DEFAULT_CONTRAST = 1.0f;
+    private static final float DEFAULT_HUE = 0.0f;
+    private static final float DEFAULT_SATURATION = .0f;
+    private static final float DEFAULT_INVERT = 0.0f;
+    private static final float DEFAULT_RED = 1.0f;
+    private static final float DEFAULT_GREEN = 1.0f;
+    private static final float DEFAULT_BLUE = 1.0f;
+    private static final float DEFAULT_GAMMA = 1.0f;
 
     private float brightness = DEFAULT_BRIGHTNESS;
     private float contrast = DEFAULT_CONTRAST;
     private float hue = DEFAULT_HUE;
     private float saturation = DEFAULT_SATURATION;
-    private float invert = DEFAULT_SATURATION;
-    private float red = DEFAULT_SATURATION;
-    private float green = DEFAULT_SATURATION;
-    private float blue = DEFAULT_SATURATION;
+    private float invert = DEFAULT_INVERT;
+    private float red = DEFAULT_RED;
+    private float green = DEFAULT_GREEN;
+    private float blue = DEFAULT_BLUE;
     private float gamma = DEFAULT_GAMMA;
 
     /**
@@ -54,7 +55,7 @@ public class BetterColorCorrectionFilter extends Filter {
     public BetterColorCorrectionFilter(float contrast, float brightness, float hue, float saturation, float invert, float red, float green, float blue, float gamma) {
         this();
         // 
-        checkFloatArgument(contrast, 0f, 100f, "Contrast");
+        checkFloatArgument(contrast, 0f, 10f, "Contrast");
         checkFloatArgument(brightness, 0f, 1f, "Brightness");
         checkFloatArgument(hue, -1f, 1f, "Hue");
         checkFloatArgument(saturation, -1f, 1f, "Saturation");
@@ -78,33 +79,15 @@ public class BetterColorCorrectionFilter extends Filter {
     @Override
     protected void initFilter(AssetManager manager, RenderManager renderManager, ViewPort vp, int w, int h) {
         material = new Material(manager, "ShaderBlowEx/MatDefs/BetterColorCorrection/BetterColorCorrection.j3md");
-        if (brightness != DEFAULT_BRIGHTNESS) {
-            material.setFloat("Brightness", brightness);
-        }
-        if (contrast != DEFAULT_CONTRAST) {
-            material.setFloat("Contrast", contrast);
-        }
-        if (hue != DEFAULT_HUE) {
-            material.setFloat("Hue", hue);
-        }
-        if (saturation != DEFAULT_SATURATION) {
-            material.setFloat("Saturation", saturation);
-        }
-        if (invert != DEFAULT_INVERT) {
-            material.setFloat("Invert", invert);
-        }
-        if (red != DEFAULT_RED) {
-            material.setFloat("Red", red);
-        }
-        if (green != DEFAULT_GREEN) {
-            material.setFloat("Green", green);
-        }
-        if (blue != DEFAULT_BLUE) {
-            material.setFloat("Blue", blue);
-        }
-        if (gamma != DEFAULT_GAMMA) {
-            material.setFloat("Gamma", gamma);
-        }
+        material.setFloat("Brightness", brightness);
+        material.setFloat("Contrast", contrast);
+        material.setFloat("Hue", hue);
+        material.setFloat("Saturation", saturation);
+        material.setFloat("Invert", invert);
+        material.setFloat("Red", red);
+        material.setFloat("Green", green);
+        material.setFloat("Blue", blue);
+        material.setFloat("Gamma", gamma);
     }
 
     @Override
@@ -118,21 +101,19 @@ public class BetterColorCorrectionFilter extends Filter {
      * @param brightness the brightness.
      */
     public void setBrightness(float brightness) {
-        checkFloatArgument(brightness, 0f, 1f, "Brightness");
+        this.brightness = FastMath.clamp(brightness, 0f, 1f);
         if (material != null) {
             material.setFloat("Brightness", brightness);
         }
-        this.brightness = brightness;
     }
 
     /**
-     * default = 1
+     * Default = 1
      *
      * @param saturation the saturation, needs to be between -1 and 1.
      */
     public void setSaturation(float saturation) {
-        checkFloatArgument(saturation, -1f, 1f, "Saturation");
-        this.saturation = saturation;
+        this.saturation = FastMath.clamp(saturation, -1.0f, 1.0f);
         if (material != null) {
             material.setFloat("Saturation", saturation);
         }
@@ -144,10 +125,10 @@ public class BetterColorCorrectionFilter extends Filter {
      * @param contrast the contrast value.
      */
     public void setContrast(float contrast) {
+        this.contrast = FastMath.clamp(contrast, 0f, 10f);
         if (material != null) {
             material.setFloat("Contrast", contrast);
         }
-        this.contrast = contrast;
     }
 
     /**
@@ -156,11 +137,10 @@ public class BetterColorCorrectionFilter extends Filter {
      * @param invert the invert value by which colors get inverted.
      */
     public void setInvert(float invert) {
-        checkFloatArgument(invert, 0f, 1f, "Invert");
+        this.invert = FastMath.clamp(invert, 0f, 1f);
         if (material != null) {
             material.setFloat("Invert", invert);
         }
-        this.invert = invert;
     }
 
     /**
@@ -169,11 +149,10 @@ public class BetterColorCorrectionFilter extends Filter {
      * @param red - red color to enhance.
      */
     public void setRed(float red) {
-        checkFloatArgument(red, 0f, 10f, "Red");
+        this.red = FastMath.clamp(red, 0f, 10f);
         if (material != null) {
             material.setFloat("Red", red);
         }
-        this.red = red;
     }
 
     /**
@@ -182,11 +161,10 @@ public class BetterColorCorrectionFilter extends Filter {
      * @param green - green color to enhance.
      */
     public void setGreen(float green) {
-        checkFloatArgument(green, 0f, 10f, "Red");
+        this.green = FastMath.clamp(green, 0f, 10f);
         if (material != null) {
             material.setFloat("Green", green);
         }
-        this.green = green;
     }
 
     /**
@@ -195,11 +173,39 @@ public class BetterColorCorrectionFilter extends Filter {
      * @param blue - blue color to enhance.
      */
     public void setBlue(float blue) {
-        checkFloatArgument(green, 0f, 10f, "Red");
+        this.blue = FastMath.clamp(blue, 0f, 10f);
         if (material != null) {
             material.setFloat("Blue", blue);
         }
-        this.blue = blue;
+    }
+
+    /**
+     * Sets the hue value, range from -1 to 1, any other value doesn't work.
+     */
+    public void setHue(float hue) {
+        this.hue = FastMath.clamp(hue, -1.0f, 1.0f);
+        if (material != null) {
+            material.setFloat("Hue", hue);
+        }
+    }
+
+    /**
+     * Set the gamma of the scene.
+     *
+     * @param The gamma of the scene.
+     */
+    public void setGamma(float gamma) {
+        this.gamma = FastMath.clamp(gamma, 0f, 10f);
+        if (material != null) {
+            material.setFloat("Gamma", gamma);
+        }
+    }
+
+    /**
+     * @return the extra brightness
+     */
+    public float getBrightness() {
+        return brightness;
     }
 
     /**
@@ -210,29 +216,6 @@ public class BetterColorCorrectionFilter extends Filter {
     }
 
     /**
-     * @return the extra brightness
-     */
-    public float getBrightness() {
-        return brightness;
-    }
-
-    public float getHue() {
-        return hue;
-    }
-
-    /**
-     * Sets the hue value, range from -1 to 1, any other value doesn't work.
-     */
-    public void setHue(float hue) {
-        if (hue > -1 && hue < 1) {
-            this.hue = hue;
-            if (material != null) {
-                material.setFloat("Hue", hue);
-            }
-        }
-    }
-
-    /**
      * @return the extra contrast
      */
     public float getContrast() {
@@ -240,21 +223,6 @@ public class BetterColorCorrectionFilter extends Filter {
     }
 
     /**
-     * Set the gamma of the scen.
-     *
-     * @param The gamma of the scene.
-     */
-    public void setGamma(float gamma) {
-        checkFloatArgument(gamma, 0, 10f, "Gamma");
-        if (material != null) {
-            material.setFloat("Gamma", gamma);
-        }
-        this.gamma = gamma;
-    }
-
-    /**
-     * Get gamma.
-     *
      * @return The gamma of the scene.
      */
     public float getGamma() {
@@ -262,8 +230,6 @@ public class BetterColorCorrectionFilter extends Filter {
     }
 
     /**
-     * Get red.
-     *
      * @return The red of the scene.
      */
     public float getRed() {
@@ -271,8 +237,6 @@ public class BetterColorCorrectionFilter extends Filter {
     }
 
     /**
-     * Get green.
-     *
      * @return The green of the scene.
      */
     public float getGreen() {
@@ -280,8 +244,6 @@ public class BetterColorCorrectionFilter extends Filter {
     }
 
     /**
-     * Get blue.
-     *
      * @return The blue of the scene.
      */
     public float getBlue() {
@@ -295,18 +257,22 @@ public class BetterColorCorrectionFilter extends Filter {
         return invert;
     }
 
+    public float getHue() {
+        return hue;
+    }
+
     @Override
     public void write(JmeExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
-        oc.write(contrast, "contrast", 1.0);
+        oc.write(contrast, "contrast", 1.0f);
         oc.write(brightness, "brightness", 1.0f);
-        oc.write(hue, "hue", 1.0);
-        oc.write(saturation, "saturation", 1.0);
-        oc.write(invert, "invert", 1.0);
-        oc.write(red, "red", 1.0);
-        oc.write(blue, "blue", 1.0);
-        oc.write(green, "green", 1.0);
+        oc.write(hue, "hue", 1.0f);
+        oc.write(saturation, "saturation", 1.0f);
+        oc.write(invert, "invert", 1.0f);
+        oc.write(red, "red", 1.0f);
+        oc.write(blue, "blue", 1.0f);
+        oc.write(green, "green", 1.0f);
     }
 
     @Override
