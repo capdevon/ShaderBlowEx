@@ -426,20 +426,23 @@ airFilter.setAirDesaturation(currentAirDesaturation);
 
 ```java
 //Init
-boolean currentVhs=true;
-boolean currentLine=true;
-boolean currentGrain=true;
-boolean currentScanline=true;
-boolean currentVignette=true;    
-//
-TVFilter tVFilter=new TVFilter(currentVhs, currentLine,currentGrain, currentScanline,currentVignette ); 
+boolean enableVHS = true;
+boolean enableLine = true;
+boolean enableGrain = true;
+boolean enableScanline = true;
+boolean enableVignette = true;
+
+TVFilter tvFilter = new TVFilter(enableVHS, enableLine, enableGrain, enableScanline, enableVignette);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
-fpp.addFilter(tVFilter);
+fpp.addFilter(tvFilter);
 viewPort.addProcessor(fpp);
-//
-tVFilter.setVhs(currentVhs);
-tVFilter.setLine(currentLine);
-tVFilter.setGrain(currentGrain);
+
+//Modify
+tvFilter.setVhs(enableVHS);
+tvFilter.setLine(enableLine);
+tvFilter.setGrain(enableGrain);
+tvFilter.setScanline(enableScanline);
+tvFilter.setVignette(enableVignette);
 ```
 
 
@@ -448,21 +451,22 @@ tVFilter.setGrain(currentGrain);
 
 ```java
 //Init
-float currentExposurePower=5.0f;
-float currentExposureCutOff=0.0f;
-float currentBloomFactor=1.5f;
-float currentBloomPower=0.5f;
-float currentDownSamplingCoef=2.0f; 
-//
-MipmapBloomFilter mipmapBloomFilter=new MipmapBloomFilter(  );
+float exposurePower = 5.0f;
+float exposureCutOff = 0.0f;
+float bloomFactor = 1.5f;
+float bloomPower = 0.5f;
+float downSamplingCoef = 2.0f;
+
+MipmapBloomFilter mipmapBloomFilter = new MipmapBloomFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(mipmapBloomFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
-mipmapBloomFilter.setExposurePower(currentExposurePower);
-mipmapBloomFilter.setExposureCutOff(currentExposureCutOff);
-mipmapBloomFilter.setBloomIntensity(currentBloomFactor,currentBloomPower );
-mipmapBloomFilter.setDownSamplingCoef(currentDownSamplingCoef);
+mipmapBloomFilter.setExposurePower(exposurePower);
+mipmapBloomFilter.setExposureCutOff(exposureCutOff);
+mipmapBloomFilter.setBloomIntensity(bloomFactor, bloomPower);
+mipmapBloomFilter.setDownSamplingCoef(downSamplingCoef);
 ```
 
 #### Credits:
