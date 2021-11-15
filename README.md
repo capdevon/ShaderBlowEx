@@ -233,24 +233,25 @@ https://www.geeks3d.com/20140204/glsl-volumetric-light-post-processing-filter-fo
 
 ```java
 //Init
-float currentStrength=0.5f;
-float currentExtent=50.0f;
-float currentBlurSize=0.1f;
-float currentBlurQuality=20.0f;
-float grayPower=2.0f;
-float grayMargin=4.0f;
-//
-BetterVignetteFilter betterVignetteFilter=new BetterVignetteFilter( );
+float strength = 0.5f;
+float extent = 50.0f;
+float blurSize = 0.1f;
+float blurQuality = 20.0f;
+float grayPower = 2.0f;
+float grayMargin = 4.0f;
+
+BetterVignetteFilter bVignetteFilter = new BetterVignetteFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
-fpp.addFilter(betterVignetteFilter);
+fpp.addFilter(bVignetteFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
-betterVignetteFilter.setVignetteStrength(currentStrength);
-betterVignetteFilter.setVignetteExtent(currentExtent);
-betterVignetteFilter.setBlurSize(currentBlurSize);
-betterVignetteFilter.setBlurQuality(currentBlurQuality);
-betterVignetteFilter.setGrayPower(grayPower);
-betterVignetteFilter.setGrayMargin(grayMargin);
+bVignetteFilter.setVignetteStrength(strength);
+bVignetteFilter.setVignetteExtent(extent);
+bVignetteFilter.setBlurSize(blurSize);
+bVignetteFilter.setBlurQuality(blurQuality);
+bVignetteFilter.setGrayPower(grayPower);
+bVignetteFilter.setGrayMargin(grayMargin);
 ```
 
 #### Info:
