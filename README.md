@@ -42,30 +42,31 @@ https://github.com/cansik/processing-postfx
 
 ```java
 //Init
-float currentContrast=1.0f;
-float currentBrightness=0.0f;
-float currentHue=0.0f;
-float currentInvert=0.0f;
-float currentRed=1.0f;
-float currentGreen=1.0f;
-float currentBlue=1.0f;
-float currentGamma=1.0f;
-float currentSaturation=0.0f;
-//
-BetterColorCorrectionFilter betterColorCorrectionFilter=new BetterColorCorrectionFilter(currentContrast, currentBrightness,currentHue, currentSaturation,currentInvert,currentRed, currentGreen, currentBlue, currentGamma); 
+float contrast = 1.0f;
+float brightness = 0.0f;
+float hue = 0.0f;
+float invert = 0.0f;
+float red = 1.0f;
+float green = 1.0f;
+float blue = 1.0f;
+float gamma = 1.0f;
+float saturation = 0.0f;
+
+BetterColorCorrectionFilter bColorFilter = new BetterColorCorrectionFilter(contrast, brightness, hue, saturation, invert, red, green, blue, gamma);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
-fpp.addFilter(betterColorCorrectionFilter);
+fpp.addFilter(bColorFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
-betterColorCorrectionFilter.setContrast(currentContrast);
-betterColorCorrectionFilter.setBrightness(currentBrightness);
-betterColorCorrectionFilter.setHue(currentHue);
-betterColorCorrectionFilter.setSaturation(currentSaturation);
-betterColorCorrectionFilter.setGamma(currentGamma);
-betterColorCorrectionFilter.setInvert(currentInvert);
-betterColorCorrectionFilter.setRed(currentRed);
-betterColorCorrectionFilter.setGreen(currentGreen);
-betterColorCorrectionFilter.setBlue(currentBlue);
+bColorFilter.setContrast(contrast);
+bColorFilter.setBrightness(brightness);
+bColorFilter.setHue(hue);
+bColorFilter.setSaturation(saturation);
+bColorFilter.setGamma(gamma);
+bColorFilter.setInvert(invert);
+bColorFilter.setRed(red);
+bColorFilter.setGreen(green);
+bColorFilter.setBlue(blue);
 ```
 #### Info:
 https://en.wikipedia.org/wiki/Color_correction
