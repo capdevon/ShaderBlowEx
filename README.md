@@ -179,20 +179,21 @@ http://en.wikipedia.org/wiki/Bleach_bypass
 
 ```java
 //Init
-float currentFocusPoint=8.0f;
-float currentRadiusScale=0.5f;
-float currentBlurSize=3.0f;
-float currentFocusScale=5.0f;
-//
-BokehDoFFilter  bokehDoFFilter=new BokehDoFFilter( );
+float focusPoint = 8.0f;
+float radiusScale = 0.5f;
+float blurSize = 3.0f;
+float focusScale = 5.0f;
+
+BokehDoFFilter bokehDoFFilter = new BokehDoFFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(bokehDoFFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
-bokehDoFFilter.setFocusPoint(currentFocusPoint);
-bokehDoFFilter.setRadiusScale(currentRadiusScale);
-bokehDoFFilter.setBlurSize(currentBlurSize);
-bokehDoFFilter.setFocusScale(currentFocusScale); 
+bokehDoFFilter.setFocusPoint(focusPoint);
+bokehDoFFilter.setRadiusScale(radiusScale);
+bokehDoFFilter.setBlurSize(blurSize);
+bokehDoFFilter.setFocusScale(focusScale);
 ```
 
 ### Info: 
