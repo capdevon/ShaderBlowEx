@@ -212,16 +212,17 @@ https://github.com/TheRealMJP/BakingLab/blob/master/BakingLab/PostProcessing.hls
 
 ```java
 //Init
-float currentStrength=30.0f;
-float currentBrightness=0.5f;
-//
-RadialHaloGlowFilter radialHaloGlow=new RadialHaloGlowFilter( );
+float strength = 30.0f;
+float brightness = 0.5f;
+
+RadialHaloGlowFilter radialHaloGlow = new RadialHaloGlowFilter(strength, brightness);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(radialHaloGlow);
-viewPort.addProcessor(fpp);   
+viewPort.addProcessor(fpp);
+
 //Modify
-radialHaloGlow.setStrength(currentStrength);
-radialHaloGlow.setBrightness(currentBrightness); 
+radialHaloGlow.setStrength(strength);
+radialHaloGlow.setBrightness(brightness);
 ```
 
 #### Credits:
@@ -263,22 +264,23 @@ https://en.wikipedia.org/wiki/Vignetting
  
 ```java
 //Init
-float currentEdgeWidth=1.0f;
-float currentColorSize=4f;
-float currentColorCount=5.0f;
-float currentPixelResolution=250.0f;
-int currentpPaletteType=PixelArtFilter.PALETTE_TYPE_LINEAR;
+float currentEdgeWidth = 1.0f;
+float currentColorSize = 4f;
+float currentColorCount = 5.0f;
+float currentPixelResolution = 250.0f;
+int currentpPaletteType = PixelArtFilter.PALETTE_TYPE_LINEAR;
 //
-PixelArtFilter  pixelArtFilter=new PixelArtFilter( );
+PixelArtFilter pixelArtFilter = new PixelArtFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(pixelArtFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
 pixelArtFilter.setPaletteType(currentpPaletteType);
 pixelArtFilter.setEdgeWidth(currentEdgeWidth);
 pixelArtFilter.setColorSize(currentColorSize);
 pixelArtFilter.setColorCount(currentColorCount);
-pixelArtFilter.setPixelResolution(currentPixelResolution);        
+pixelArtFilter.setPixelResolution(currentPixelResolution);       
 ```
 
 #### Info:
@@ -297,12 +299,13 @@ http://unusedino.de/ec64/technical/misc/vic656x/colors/
 
 ```java
 //Init
-float currentStep=10.0f;
+float currentStep = 10.0f;
 //
-PosterizationFilter posterizationFilter=new PosterizationFilter(currentStep);
+PosterizationFilter posterizationFilter = new PosterizationFilter(currentStep);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(posterizationFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
 posterizationFilter.setStep(currentStep);
 ```
@@ -321,18 +324,19 @@ https://www.geeks3d.com/20091027/shader-library-posterization-post-processing-ef
 
 ```java
 //Init
-float currentStrength=0.5f;
-float currentSize=3.0f;
-int currentSamples=15;
+float currentStrength = 0.5f;
+float currentSize = 3.0f;
+int currentSamples = 15;
 //
-SimpleBloomFilter simpleBloomFilter=new SimpleBloomFilter( currentStrength,currentSize,currentSamples);
+SimpleBloomFilter simpleBloomFilter = new SimpleBloomFilter(currentStrength, currentSize, currentSamples);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(simpleBloomFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
 simpleBloomFilter.setStrength(currentStrength);
 simpleBloomFilter.setSize(currentSize);
-simpleBloomFilter.setSamples(currentSamples); 
+simpleBloomFilter.setSamples(currentSamples);
 ```
 
 #### Credits:
@@ -346,13 +350,14 @@ https://github.com/kiwipxl/GLSL-shaders
 
 ```java
 //Init
-float currentStrength=1.0f;
-float currentScale=256f;
+float currentStrength = 1.0f;
+float currentScale = 256f;
 //
-whiteBloomFilter=new WhiteBloomFilter(currentStrength);
+whiteBloomFilter = new WhiteBloomFilter(currentStrength);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(whiteBloomFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
 whiteBloomFilter.setStrength(currentStrength);
 whiteBloomFilter.setScale(currentScale);
@@ -384,9 +389,9 @@ https://github.uconn.edu/eec09006/breakout
 
 ```java
 //Init
-NFAAFilter nFAAFilter=new NFAAFilter();
+NFAAFilter nfaa = new NFAAFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
-fpp.addFilter(nFAAFilter);
+fpp.addFilter(nfaa);
 viewPort.addProcessor(fpp);
 ```
 
@@ -410,7 +415,7 @@ float currentAirDensity = 0.4f;
 float currentAirDistance = 10;
 float currentAirDesaturation = 1f;
 //
-AirFilter airFilter=new AirFilter( );
+AirFilter airFilter = new AirFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(airFilter);
 viewPort.addProcessor(fpp);
@@ -517,9 +522,9 @@ https://github.com/jMonkeyEngine/jmonkeyengine/pull/1144
 
 ```java
 //Init
-int currentStrength=5;
+int currentStrength = 5;
 //
-OilPaintFilter oilPaintFilter=new OilPaintFilter();
+OilPaintFilter oilPaintFilter = new OilPaintFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(oilPaintFilter);
 viewPort.addProcessor(fpp);
@@ -536,21 +541,17 @@ https://www.reddit.com/r/shaders/comments/5e7026/help_making_an_oil_paint_post_p
 
 ```java
 //Init 
-float currentSpacing=0.125f;
-float currentDistance=0.5f;
-float currentThreshold=0.2f;
-//
-LensFlareFilter lensFlareFilter = new LensFlareFilter( ); 
+float currentSpacing = 0.125f;
+float currentDistance = 0.5f;
+float currentThreshold = 0.2f;
+
+LensFlareFilter lensFlareFilter = new LensFlareFilter();
 lensFlareFilter.setGhostSpacing(currentSpacing);
 lensFlareFilter.setHaloDistance(currentDistance);
 lensFlareFilter.setLightMapThreshold(currentThreshold);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(lensFlareFilter);
 viewPort.addProcessor(fpp);
-//Modify
-lensFlareFilter.setGhostSpacing(currentSpacing);
-lensFlareFilter.setHaloDistance(currentDistance);
-lensFlareFilter.setLightMapThreshold(currentThreshold);
 ```
 
 #### Credits:
