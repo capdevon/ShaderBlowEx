@@ -12,8 +12,8 @@ https://jmonkeystore.com/471f0c67-7911-48c4-84e8-d1f523555400
 ```java
 //Init
 int currentType = BetterToneMapFilter.TYPE_LINEAR;
-float currentExposure = 1.0;
-float currentGamma = 1.0;
+float currentExposure = 1.0f;
+float currentGamma = 1.0f;
 
 BetterToneMapFilter bToneMapFilter = new BetterToneMapFilter(currentType, currentExposure, currentGamma);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
@@ -160,12 +160,13 @@ https://hub.jmonkeyengine.org/t/bettergroundfogfilter/41452
 
 ```java
 //Init
-float currentStrength=1.0f;
+float currentStrength = 1.0f;
 //
-BleachMapFilter bleachMapFilter=new BleachMapFilter(currentStrength);
+BleachMapFilter bleachMapFilter = new BleachMapFilter(currentStrength);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(bleachMapFilter);
 viewPort.addProcessor(fpp);
+
 //Modify
 bleachMapFilter.setStrength(currentStrength);
 ```
@@ -353,7 +354,7 @@ https://github.com/kiwipxl/GLSL-shaders
 float currentStrength = 1.0f;
 float currentScale = 256f;
 //
-whiteBloomFilter = new WhiteBloomFilter(currentStrength);
+WhiteBloomFilter whiteBloomFilter = new WhiteBloomFilter(currentStrength);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(whiteBloomFilter);
 viewPort.addProcessor(fpp);
@@ -369,9 +370,9 @@ whiteBloomFilter.setScale(currentScale);
 
 ```java
 //Init
-DLAAFilter dLAAFilter=new DLAAFilter();
+DLAAFilter dlaa = new DLAAFilter();
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
-fpp.addFilter(dLAAFilter);
+fpp.addFilter(dlaa);
 viewPort.addProcessor(fpp);
 ```
 
@@ -483,13 +484,13 @@ https://hub.jmonkeyengine.org/t/mipmapbloomfilter-on-github/36360
 
 ```java
 //Init
-float currentDownSample=2f;
-float currentStepLength=0.5f;
-int currentRayStepLength=32;
-float currentSigma= 5f;
-float currentReflectionFactor=0.5f;
+float currentDownSample = 2f;
+float currentStepLength = 0.5f;
+int currentRayStepLength = 32;
+float currentSigma = 5f;
+float currentReflectionFactor = 0.5f;
 //
-SimpleSSRFilter simpleSSRFilter=new SimpleSSRFilter();
+SimpleSSRFilter simpleSSRFilter = new SimpleSSRFilter();
 simpleSSRFilter.setDownSampleFactor(currentDownSample);
 simpleSSRFilter.setApproximateNormals(false);
 simpleSSRFilter.setFastBlur(true);
@@ -502,8 +503,6 @@ simpleSSRFilter.setReflectionFactor(currentReflectionFactor);
 FilterPostProcessor fpp = new FilterPostProcessor(assetManager);
 fpp.addFilter(simpleSSRFilter);
 viewPort.addProcessor(fpp);
-//Modify
-simpleSSRFilter.setStepLength(currentStepLength);
 ```
 
 #### Info
