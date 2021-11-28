@@ -127,7 +127,7 @@ public class TVFilter extends Filter {
     public void read(JmeImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
-        line = ic.readBoolean("line", true);
+        vhs = ic.readBoolean("vhs", true);
         line = ic.readBoolean("line", true);
         grain = ic.readBoolean("grain", true);
         scanline = ic.readBoolean("scanline", true);
