@@ -20,6 +20,7 @@ vec3 saturate(vec3 color, float sat) {
 }
 
 void main() {
+
     vec2 m_FrustumNearFar = vec2(1.0, m_AirDistance);
     vec4 texVal = texture2D(m_Texture, texCoord);
     float fogVal = texture2D(m_DepthTexture, texCoord).r;
@@ -30,5 +31,4 @@ void main() {
     texVal.rgb = saturate(texVal.rgb, clamp(-1. + factor / m_AirDesaturation, -1., .0));
 
     gl_FragColor = mix(m_AirColor, texVal, fogFactor);
-
 }
