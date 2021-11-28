@@ -52,17 +52,18 @@ vec3 red_PerPixel(vec3 color, float redFac) {
     color.r *= redFac;
     return color;
 }
+
 vec3 green_PerPixel(vec3 color, float greenFac) {
     color.g *= greenFac;
     return color;
 }
+
 vec3 blue_PerPixel(vec3 color, float blueFac) {
     color.b *= blueFac;
     return color;
 }
 
 vec3 gammaCorrection(vec3 color, float gamma) {
-    // gamma correction 
     color = pow(color, vec3(1.0 / gamma));
     return color;
 }
