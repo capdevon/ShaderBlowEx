@@ -15,6 +15,7 @@ float lumRGB(vec3 v) {
 }
 
 const float fScale = 1.0;
+
 float GetColorLuminance(vec3 i_vColor) {
     return dot(i_vColor, vec3(0.2126, 0.7152, 0.0722));
 }
@@ -56,11 +57,8 @@ vec4 nfaa(sampler2D texture, vec2 texCoords, vec2 viewportInverse) {
 
     // Debug
     //return vec4(normalize(vec3(vect1, vect2 , 1.0) * 0.5 + 0.5), 1.0);
-
 }
 
 void main() {
-
     gl_FragColor = nfaa(m_Texture, texCoord, g_ResolutionInverse);
-
 }
