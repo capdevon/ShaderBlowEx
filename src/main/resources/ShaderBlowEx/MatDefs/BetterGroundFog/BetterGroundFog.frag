@@ -62,10 +62,7 @@ vec4 main_multiSample(in int sampleNum){
     #ifdef GROUND
         fc *= step(m_GroundLevel, g_CameraPosition.y);
     #endif
-    return vec4(mix(colorTex.rgb, 
-                    colorFog, 
-                    fc), 
-                1.0); 
+    return vec4(mix(colorTex.rgb, colorFog, fc), 1.0); 
 }
 
 void main() {
