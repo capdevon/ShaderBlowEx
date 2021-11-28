@@ -29,7 +29,7 @@ public class RadialHaloGlowFilter extends Filter {
     }
 
     @Override
-    protected void initFilter(AssetManager assetManager, RenderManager arg1, ViewPort arg2, int w, int h) {
+    protected void initFilter(AssetManager assetManager, RenderManager renderManager, ViewPort vp, int w, int h) {
         material = new Material(assetManager, "ShaderBlowEx/MatDefs/RadialHaloGlow/RadialHaloGlow.j3md");
         material.setFloat("Brightness", brightness);
         material.setFloat("Strength", strength);
