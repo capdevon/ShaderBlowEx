@@ -17,8 +17,11 @@ public class PosterizationFilter extends Filter {
 
     private float step = DEFAULT_STEP;
 
+    /**
+     * Creates a white highlighting filter
+     */
     public PosterizationFilter() {
-        super("Posterization");
+        super("PosterizationFilter");
     }
 
     /**
@@ -77,7 +80,7 @@ public class PosterizationFilter extends Filter {
     public void read(JmeImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
-        step = (Float) ic.readFloat("step", DEFAULT_STEP);
+        step = ic.readFloat("step", DEFAULT_STEP);
 
     }
 
