@@ -18,11 +18,10 @@ public class OilPaintFilter extends Filter {
     private int strength = DEFAULT_STRENGTH;
 
     /**
-     * Creates a OilpaintFilter
+     * Creates an OilPaintFilter
      */
     public OilPaintFilter() {
         super("OilPaintFilter");
-
     }
 
     /**
@@ -40,7 +39,6 @@ public class OilPaintFilter extends Filter {
     protected void initFilter(AssetManager manager, RenderManager renderManager, ViewPort vp, int w, int h) {
         material = new Material(manager, "ShaderBlowEx/MatDefs/OilPaint/OilPaint.j3md");
         material.setInt("Strength", strength);
-
     }
 
     @Override
@@ -81,7 +79,7 @@ public class OilPaintFilter extends Filter {
     public void read(JmeImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
-        strength = (Integer) ic.readInt("strength", DEFAULT_STRENGTH);
+        strength = ic.readInt("strength", DEFAULT_STRENGTH);
     }
 
     private void checkIntArgument(int value, int min, int max, String name) {
