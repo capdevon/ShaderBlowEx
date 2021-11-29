@@ -11,9 +11,9 @@ MaterialDef DLAA {
         FragmentShader GLSL100: ShaderBlowEx/MatDefs/DLAA/DLAA.frag
 
        WorldParameters {
-             Resolution
-        }
-      
+            Resolution
+       }
+       
     }
 
 }
