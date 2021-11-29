@@ -12,24 +12,24 @@ import com.jme3.texture.Image.Format;
 
 public class PixelArtFilter extends Filter {
 
-    public static int PALETTE_TYPE_LINEAR = 0;
-    public static int PALETTE_TYPE_C64 = 1;
-    public static int PALETTE_TYPE_CGA = 2;
-    public static int PALETTE_TYPE_CC = 3;
-    public static int PALETTE_TYPE_ANSI = 4;
-    public static int PALETTE_TYPE_STRIPE = 5;
-    public static int PALETTE_TYPE_GRAYSCALE = 6;
-    public static int PALETTE_TYPE_HEATMAP = 7;
-    public static int PALETTE_TYPE_RAINBOW = 8;
-    public static int PALETTE_TYPE_BRIGHTNESS = 9;
-    public static int PALETTE_TYPE_DESERT = 10;
-    public static int PALETTE_TYPE_ELECTRICAL = 11;
-    public static int PALETTE_TYPE_NEON = 12;
-    public static int PALETTE_TYPE_FIRE = 13;
-    public static int PALETTE_TYPE_TECH = 14;
-    public static int PALETTE_TYPE_HUE = 15;
-    public static int PALETTE_TYPE_POSTERIZATION = 16;
-    public static int PALETTE_TYPE_TOONIFICATION = 17;
+    public static final int PALETTE_TYPE_LINEAR = 0;
+    public static final int PALETTE_TYPE_C64 = 1;
+    public static final int PALETTE_TYPE_CGA = 2;
+    public static final int PALETTE_TYPE_CC = 3;
+    public static final int PALETTE_TYPE_ANSI = 4;
+    public static final int PALETTE_TYPE_STRIPE = 5;
+    public static final int PALETTE_TYPE_GRAYSCALE = 6;
+    public static final int PALETTE_TYPE_HEATMAP = 7;
+    public static final int PALETTE_TYPE_RAINBOW = 8;
+    public static final int PALETTE_TYPE_BRIGHTNESS = 9;
+    public static final int PALETTE_TYPE_DESERT = 10;
+    public static final int PALETTE_TYPE_ELECTRICAL = 11;
+    public static final int PALETTE_TYPE_NEON = 12;
+    public static final int PALETTE_TYPE_FIRE = 13;
+    public static final int PALETTE_TYPE_TECH = 14;
+    public static final int PALETTE_TYPE_HUE = 15;
+    public static final int PALETTE_TYPE_POSTERIZATION = 16;
+    public static final int PALETTE_TYPE_TOONIFICATION = 17;
 
     private Pass normalPass;
     private float edgeWidth = 1.0f;
@@ -93,7 +93,6 @@ public class PixelArtFilter extends Filter {
         material.setFloat("ColorSize", colorSize);
         material.setFloat("ColorCount", colorCount);
         material.setFloat("PixelResolution", pixelResolution);
-
     }
 
     @Override
@@ -190,12 +189,12 @@ public class PixelArtFilter extends Filter {
         if (material != null) {
             material.setFloat("EdgeWidth", edgeWidth);
         }
-
     }
 
     /**
      * returns the normals sensitivity<br>
-     * form more details see {@link #setNormalSensitivity(float normalSensitivity)}
+     * form more details see
+     * {@link #setNormalSensitivity(float normalSensitivity)}
      *
      * @return the sensitivity
      */
