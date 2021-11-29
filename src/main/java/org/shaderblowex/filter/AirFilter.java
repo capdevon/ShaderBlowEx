@@ -13,9 +13,9 @@ import com.jme3.renderer.ViewPort;
 import java.io.IOException;
 
 /**
- * A filter to render a atmosphere effect
+ * A filter to render an atmosphere effect
  *
- * @author Rémy Bouquet aka Nehon
+ * @author Nehon
  */
 public class AirFilter extends Filter {
 
@@ -25,14 +25,14 @@ public class AirFilter extends Filter {
     private float airDesaturation = 1f;
 
     /**
-     * Creates a AirFilter
+     * Creates an AirFilter
      */
     public AirFilter() {
         super("AirFilter");
     }
 
     /**
-     * Create a air filter
+     * Create an AirFilter
      *
      * @param airColor the color of the air (default is white)
      * @param airDensity the density of the air (default is 0.7)
@@ -74,7 +74,7 @@ public class AirFilter extends Filter {
     }
 
     /**
-     * Sets the color of the air. In general should be blueish
+     * Sets the color of the air. In general should be bluish
      *
      * @param airColor
      */
@@ -117,7 +117,7 @@ public class AirFilter extends Filter {
     }
 
     /**
-     * the distance of the air. the higer the value the distant the air looks
+     * the distance of the air. the higher the value the distant the air looks
      *
      * @param airDistance
      */
@@ -139,8 +139,8 @@ public class AirFilter extends Filter {
     }
 
     /**
-     * the desaturation factor based on distance. The higer the value the faster
-     * models get desaturated 1-2 seems resonable.
+     * the desaturation factor based on distance. The higher the value the
+     * faster models get desaturated 1-2 seems reasonable.
      *
      * @param airDesaturation
      */
@@ -172,10 +172,10 @@ public class AirFilter extends Filter {
         airDesaturation = ic.readFloat("airDesaturation", 1f);
     }
 
-    @Deprecated
     private void checkFloatArgument(float value, float min, float max, String name) {
         if (value < min || value > max) {
             throw new IllegalArgumentException(name + " was " + value + " but should be between " + min + " and " + max);
         }
     }
+    
 }
