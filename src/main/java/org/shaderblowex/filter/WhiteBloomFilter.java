@@ -70,7 +70,7 @@ public class WhiteBloomFilter extends Filter {
     }
 
     /**
-     * Set the stregth of the effect.
+     * Set the strength of the effect.
      *
      * @param The strength of the effect.
      */
@@ -96,15 +96,15 @@ public class WhiteBloomFilter extends Filter {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(strength, "strength", DEFAULT_STRENGTH);
-        oc.write(strength, "scale", DEFAULT_SCALE);
+        oc.write(scale, "scale", DEFAULT_SCALE);
     }
 
     @Override
     public void read(JmeImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
-        strength = (Float) ic.readFloat("strength", DEFAULT_STRENGTH);
-        scale = (Float) ic.readFloat("scale", DEFAULT_SCALE);
+        strength = ic.readFloat("strength", DEFAULT_STRENGTH);
+        scale = ic.readFloat("scale", DEFAULT_SCALE);
     }
 
     private void checkFloatArgument(float value, float min, float max, String name) {
