@@ -13,11 +13,11 @@ import java.io.IOException;
 
 public class SimpleBloomFilter extends Filter {
 
-    private static final float DEFAULT_STENGTH = 0.5f;
+    private static final float DEFAULT_STRENGTH = 0.5f;
     private static final int DEFAULT_SAMPLES = 15;
     private static final float DEFAULT_SIZE = 3.0f;
 
-    private float strength = DEFAULT_STENGTH;
+    private float strength = DEFAULT_STRENGTH;
     private float size = DEFAULT_SIZE;
     private int samples = DEFAULT_SAMPLES;
 
@@ -41,7 +41,6 @@ public class SimpleBloomFilter extends Filter {
         this.strength = strength;
         this.size = size;
         this.samples = samples;
-
     }
 
     @Override
@@ -117,7 +116,7 @@ public class SimpleBloomFilter extends Filter {
     public void write(JmeExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
-        oc.write(strength, "strength", DEFAULT_STENGTH);
+        oc.write(strength, "strength", DEFAULT_STRENGTH);
         oc.write(samples, "samples", DEFAULT_SAMPLES);
         oc.write(size, "size", DEFAULT_SIZE);
     }
@@ -126,7 +125,7 @@ public class SimpleBloomFilter extends Filter {
     public void read(JmeImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
-        strength = ic.readFloat("strength", DEFAULT_STENGTH);
+        strength = ic.readFloat("strength", DEFAULT_STRENGTH);
         samples = ic.readInt("samples", DEFAULT_SAMPLES);
         size = ic.readFloat("size", DEFAULT_SIZE);
     }
