@@ -66,11 +66,15 @@ public class RadialHaloGlowFilter extends Filter {
     public void write(JmeExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
+        oc.write(strength, "strength", 30f);
+        oc.write(brightness, "brightness", 0.5f);
     }
 
     @Override
     public void read(JmeImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
+        strength = ic.readFloat("strength", 30f);
+        brightness = ic.readFloat("brightness", 0.5f);
     }
 }
