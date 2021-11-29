@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class BetterToneMapFilter extends Filter {
 
-	//TODO: Enum ???
+    //TODO: Enum ???
     public static final int TYPE_LINEAR = 0;
     public static final int TYPE_SIMPLE_REINHARD = 1;
     public static final int TYPE_LUMA_BASED_REINHARD = 2;
@@ -167,18 +167,18 @@ public class BetterToneMapFilter extends Filter {
     public void write(JmeExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
-        oc.write(gamma, "Gamma", DEFAULT_GAMMA);
-        oc.write(exposure, "Exposure", DEFAULT_EXPOSURE);
-        oc.write(tonemapType, "ToneMapType", DEFAULT_TONEMAP_TYPE);
+        oc.write(gamma, "gamma", DEFAULT_GAMMA);
+        oc.write(exposure, "exposure", DEFAULT_EXPOSURE);
+        oc.write(tonemapType, "tonemapType", DEFAULT_TONEMAP_TYPE);
     }
 
     @Override
     public void read(JmeImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
-        gamma = (Float) ic.readFloat("Gamma", DEFAULT_GAMMA);
-        exposure = (Float) ic.readFloat("Exposure", DEFAULT_EXPOSURE);
-        tonemapType = (Integer) ic.readInt("ToneMapType", DEFAULT_TONEMAP_TYPE);
+        gamma = ic.readFloat("gamma", DEFAULT_GAMMA);
+        exposure = ic.readFloat("exposure", DEFAULT_EXPOSURE);
+        tonemapType = ic.readInt("tonemapType", DEFAULT_TONEMAP_TYPE);
     }
 
     @Deprecated
