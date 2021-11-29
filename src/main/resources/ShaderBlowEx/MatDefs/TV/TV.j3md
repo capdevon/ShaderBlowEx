@@ -4,10 +4,10 @@ MaterialDef BetterColorCorrection {
         Int NumSamples
         Int NumSamplesDepth
         Texture2D Texture
-        Boolean EnabledVHS;
-        Boolean EnabledLine;
-        Boolean EnabledGrain;
-        Boolean EnabledScanline;
+        Boolean EnabledVHS
+        Boolean EnabledLine
+        Boolean EnabledGrain
+        Boolean EnabledScanline
         Boolean EnabledVignette
      }
 
@@ -15,11 +15,11 @@ MaterialDef BetterColorCorrection {
         VertexShader GLSL100 :   ShaderBlowEx/MatDefs/TV/TV.vert
         FragmentShader GLSL100 : ShaderBlowEx/MatDefs/TV/TV.frag
 
-      WorldParameters {
-        WorldViewProjectionMatrix;
-        Time;
-        Resolution;
-    }
+        WorldParameters {
+            WorldViewProjectionMatrix;
+            Time;
+            Resolution;
+        }
      
     }
 
