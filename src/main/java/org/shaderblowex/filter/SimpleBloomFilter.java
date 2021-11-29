@@ -13,7 +13,6 @@ import java.io.IOException;
 
 public class SimpleBloomFilter extends Filter {
 
-    private static final int DEFAULT_BLOOM_TYPE = 0;
     private static final float DEFAULT_STENGTH = 0.5f;
     private static final int DEFAULT_SAMPLES = 15;
     private static final float DEFAULT_SIZE = 3.0f;
@@ -35,11 +34,9 @@ public class SimpleBloomFilter extends Filter {
      */
     public SimpleBloomFilter(float strength, float size, int samples) {
         this();
-        // 
         checkFloatArgument(strength, 0, 1f, "Strength");
         checkFloatArgument(size, 0, 5f, "Size");
         checkIntArgument(samples, 1, 20, "Samples");
-        //
 
         this.strength = strength;
         this.size = size;
@@ -106,10 +103,10 @@ public class SimpleBloomFilter extends Filter {
 
     public void setStrength(float strength) {
         checkFloatArgument(strength, 0.0f, 100.0f, "Strength");
-        //
         if (material != null) {
             material.setFloat("Strength", strength);
         }
+        this.strength = strength;
     }
 
     public float getStrength() {
@@ -129,9 +126,9 @@ public class SimpleBloomFilter extends Filter {
     public void read(JmeImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
-        strength = (Float) ic.readFloat("strength", DEFAULT_STENGTH);
-        samples = (Integer) ic.readInt("samples", DEFAULT_SAMPLES);
-        size = (Float) ic.readFloat("size", DEFAULT_SIZE);
+        strength = ic.readFloat("strength", DEFAULT_STENGTH);
+        samples = ic.readInt("samples", DEFAULT_SAMPLES);
+        size = ic.readFloat("size", DEFAULT_SIZE);
     }
 
     private void checkFloatArgument(float value, float min, float max, String name) {
