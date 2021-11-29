@@ -13,10 +13,10 @@ import java.io.IOException;
 
 public class BokehDoFFilter extends Filter {
 
-    private final float DEFAULT_FOCUS_POINT = 8f;
-    private final float DEFAULT_RADIUS_SCALE = 0.5f;
-    private final float DEFAULT_BLUR_SIZE = 3;
-    private final float DEFAULT_FOCUS_SCALE = 12;
+    private static final float DEFAULT_FOCUS_POINT = 8f;
+    private static final float DEFAULT_RADIUS_SCALE = 0.5f;
+    private static final float DEFAULT_BLUR_SIZE = 3;
+    private static final float DEFAULT_FOCUS_SCALE = 12;
 
     private float focusPoint = DEFAULT_FOCUS_POINT;
     private float radiusScale = DEFAULT_RADIUS_SCALE;
@@ -69,9 +69,9 @@ public class BokehDoFFilter extends Filter {
     /**
      * Sets the point at which objects are purely in focus.
      */
-    public void setFocusPoint(float f) {
+    public void setFocusPoint(float focusPoint) {
         checkFloatArgument(focusPoint, 0.0f, 50.0f, "FocusPoint");
-        this.focusPoint = f;
+        this.focusPoint = focusPoint;
         if (material != null) {
             material.setFloat("FocusPoint", focusPoint);
         }
@@ -90,9 +90,9 @@ public class BokehDoFFilter extends Filter {
      * Sets the range to either side of focusPoint where the objects go
      * gradually out of focus.
      */
-    public void setRadiusScale(float f) {
+    public void setRadiusScale(float radiusScale) {
         checkFloatArgument(radiusScale, 0.0f, 1.0f, "RadiusScale");
-        this.radiusScale = f;
+        this.radiusScale = radiusScale;
         if (material != null) {
             material.setFloat("RadiusScale", radiusScale);
         }
@@ -110,9 +110,9 @@ public class BokehDoFFilter extends Filter {
     /**
      * Sets Focus scale which is responsible for blur level
      */
-    public void setFocusScale(float f) {
+    public void setFocusScale(float focusScale) {
         checkFloatArgument(focusScale, 0.0f, 20.0f, "FocusScale");
-        this.focusScale = f;
+        this.focusScale = focusScale;
         if (material != null) {
             material.setFloat("FocusScale", focusScale);
         }
@@ -131,9 +131,9 @@ public class BokehDoFFilter extends Filter {
      * Sets the minimum blur factor before the convolution filter is calculated.
      * The default is 15
      */
-    public void setBlurSize(float f) {
+    public void setBlurSize(float blurSize) {
         checkFloatArgument(blurSize, 0.0f, 20.0f, "BlurSize");
-        this.blurSize = f;
+        this.blurSize = blurSize;
         if (material != null) {
             material.setFloat("BlurSize", blurSize);
         }
@@ -166,7 +166,6 @@ public class BokehDoFFilter extends Filter {
         focusPoint = ic.readFloat("focusPoint", 50f);
         radiusScale = ic.readFloat("radiusScale", 0.5f);
         focusScale = ic.readFloat("focusScale", 0.5f);
-
     }
 
     private void checkFloatArgument(float value, float min, float max, String name) {
